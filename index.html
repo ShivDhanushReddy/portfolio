@@ -201,6 +201,28 @@
   }
   #theme-toggle:hover { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
 
+  #lang-toggle {
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    transition: background var(--transition), border-color var(--transition), color var(--transition);
+  }
+  #lang-toggle:hover { background: var(--accent-light); border-color: var(--accent); }
+  #lang-toggle #lang-current { color: var(--accent); }
+  #lang-toggle .lang-sep { color: var(--text-muted); font-weight: 400; }
+  #lang-toggle #lang-other { color: var(--text-muted); }
+
   .nav-cta {
     padding: 9px 20px;
     border-radius: 100px;
@@ -1076,20 +1098,25 @@
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">SM<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#recruiters">Recruiters</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#education" data-i18n="nav.education">Education</a></li>
+      <li><a href="#recruiters" data-i18n="nav.recruiters">Recruiters</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="nav-right">
+      <button id="lang-toggle" aria-label="Switch language" title="Switch language">
+        <span id="lang-current">EN</span>
+        <span class="lang-sep">/</span>
+        <span id="lang-other">DE</span>
+      </button>
       <button id="theme-toggle" aria-label="Toggle dark mode">
         <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
-      <a href="mailto:shivdhanush.de@gmail.com" class="nav-cta">Get in Touch</a>
+      <a data-i18n="nav.cta" href="mailto:shivdhanush.de@gmail.com" class="nav-cta">Get in Touch</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -1099,13 +1126,13 @@
 
 <!-- MOBILE NAV -->
 <div id="mobile-nav">
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#education">Education</a>
-  <a href="#recruiters">Recruiters</a>
-  <a href="#contact">Contact</a>
+  <a href="#about" data-i18n="nav.about">About</a>
+  <a href="#skills" data-i18n="nav.skills">Skills</a>
+  <a href="#experience" data-i18n="nav.experience">Experience</a>
+  <a href="#projects" data-i18n="nav.projects">Projects</a>
+  <a href="#education" data-i18n="nav.education">Education</a>
+  <a href="#recruiters" data-i18n="nav.recruiters">Recruiters</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -1117,16 +1144,16 @@
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="hero-dot"></span>
-          <span class="hero-eyebrow-text">Available for new opportunities</span>
+          <span data-i18n="hero.eyebrow" class="hero-eyebrow-text">Available for new opportunities</span>
         </div>
         <h1 class="hero-name">Shivdhanush<br><em>Mamidur</em></h1>
-        <p class="hero-title">Process &amp; Manufacturing Engineer | LEAN Specialist | Automation &amp; NPD</p>
-        <p class="hero-bio">Process &amp; Manufacturing Engineer with 4+ years of shopfloor operations, production optimization, and LEAN-driven automation across automotive, agri-tech, and food production sectors. Berlin-based, immediately available, EU Blue Card eligible.</p>
+        <p data-i18n="hero.title" class="hero-title">Process &amp; Manufacturing Engineer | LEAN Specialist | Automation &amp; NPD</p>
+        <p data-i18n="hero.bio" class="hero-bio">Process &amp; Manufacturing Engineer with 4+ years of shopfloor operations, production optimization, and LEAN-driven automation across automotive, agri-tech, and food production sectors. Berlin-based, immediately available, EU Blue Card eligible.</p>
         <div class="hero-badges">
           <span class="tag">LEAN / KVP / 5S</span>
-          <span class="tag">Shopfloor Management</span>
-          <span class="tag">NPD / NPI Ramp-up</span>
-          <span class="tag">EU Blue Card Eligible</span>
+          <span data-i18n="hero.badge.shopfloor" class="tag">Shopfloor Management</span>
+          <span data-i18n="hero.badge.npd" class="tag">NPD / NPI Ramp-up</span>
+          <span data-i18n="hero.badge.bluecard" class="tag">EU Blue Card Eligible</span>
         </div>
         <div class="hero-actions">
           <a href="#contact" class="btn-primary">
@@ -1141,19 +1168,19 @@
         <div class="hero-stats">
           <div class="stat-item">
             <div class="stat-num">4+</div>
-            <div class="stat-label">Years Experience</div>
+            <div data-i18n="stat.years" class="stat-label">Years Experience</div>
           </div>
           <div class="stat-item">
             <div class="stat-num">5</div>
-            <div class="stat-label">Key Projects</div>
+            <div data-i18n="stat.projects" class="stat-label">Key Projects</div>
           </div>
           <div class="stat-item">
             <div class="stat-num">6</div>
-            <div class="stat-label">Languages</div>
+            <div data-i18n="stat.languages" class="stat-label">Languages</div>
           </div>
           <div class="stat-item">
             <div class="stat-num">70</div>
-            <div class="stat-label">Team Led</div>
+            <div data-i18n="stat.team" class="stat-label">Team Led</div>
           </div>
         </div>
       </div>
@@ -1174,39 +1201,39 @@
   <div class="container">
     <div class="about-grid">
       <div class="reveal">
-        <p class="section-label">About</p>
-        <h2 class="section-title">Engineering precision meets strategic thinking</h2>
+        <p data-i18n="about.label" class="section-label">About</p>
+        <h2 data-i18n="about.title" class="section-title">Engineering precision meets strategic thinking</h2>
         <div class="about-text">
-          <p>I'm a Process &amp; Manufacturing Engineer with over 4 years of hands-on experience in shopfloor operations, production optimization, and LEAN-driven automation across automotive, agri-tech, and food production sectors. My work spans from NPD production ramp-ups to warehouse automation systems, consistently delivering measurable efficiency improvements.</p>
-          <p>With proven expertise in shopfloor management, work planning, and root cause analysis (5Why, 8D), I've achieved 30% efficiency gains through LEAN/KVP methodologies and successfully led production teams of 70+ members during critical automotive launches.</p><p>Currently completing my M.Sc. in Engineering Management at Berlin School of Business and Innovation, I combine technical engineering depth with strong business acumen in project delivery and cross-functional leadership.</p>
-          <p>I'm actively seeking Manufacturing Engineer, Process Engineer, and LEAN/Continuous Improvement Specialist roles in Germany, with expertise spanning shopfloor operations, process optimization, and automation integration.</p>
+          <p data-i18n="about.p1">I'm a Process &amp; Manufacturing Engineer with over 4 years of hands-on experience in shopfloor operations, production optimization, and LEAN-driven automation across automotive, agri-tech, and food production sectors. My work spans from NPD production ramp-ups to warehouse automation systems, consistently delivering measurable efficiency improvements.</p>
+          <p data-i18n="about.p2">With proven expertise in shopfloor management, work planning, and root cause analysis (5Why, 8D), I've achieved 30% efficiency gains through LEAN/KVP methodologies and successfully led production teams of 70+ members during critical automotive launches.</p><p data-i18n="about.p3">Currently completing my M.Sc. in Engineering Management at Berlin School of Business and Innovation, I combine technical engineering depth with strong business acumen in project delivery and cross-functional leadership.</p>
+          <p data-i18n="about.p4">I'm actively seeking Manufacturing Engineer, Process Engineer, and LEAN/Continuous Improvement Specialist roles in Germany, with expertise spanning shopfloor operations, process optimization, and automation integration.</p>
         </div>
         <div style="margin-top:24px;">
-          <span class="award-pill">🏆 Innovator of the Year 2023 — WayCool Foods</span>
-          <span class="award-pill">🎖 Excellence in Leadership — KIA Motors 2022</span>
+          <span data-i18n="about.award1" class="award-pill">🏆 Innovator of the Year 2023 — WayCool Foods</span>
+          <span data-i18n="about.award2" class="award-pill">🎖 Excellence in Leadership — KIA Motors 2022</span>
         </div>
       </div>
       <div class="reveal reveal-delay-2">
         <div class="about-highlights">
           <div class="highlight-card">
             <span class="highlight-icon">🤖</span>
-            <h4>Robotics &amp; AI</h4>
-            <p>Built AI-integrated drones with YOLO v7 and Jetson Nano for precision agri-tech applications.</p>
+            <h4 data-i18n="about.h.robotics">Robotics &amp; AI</h4>
+            <p data-i18n="about.hd.robotics">Built AI-integrated drones with YOLO v7 and Jetson Nano for precision agri-tech applications.</p>
           </div>
           <div class="highlight-card">
             <span class="highlight-icon">⚙️</span>
-            <h4>Process Engineering</h4>
-            <p>Achieved 30% efficiency gains through LEAN, KVP, and 5S-driven automation projects.</p>
+            <h4 data-i18n="about.h.process">Process Engineering</h4>
+            <p data-i18n="about.hd.process">Achieved 30% efficiency gains through LEAN, KVP, and 5S-driven automation projects.</p>
           </div>
           <div class="highlight-card">
             <span class="highlight-icon">👥</span>
-            <h4>Team Leadership</h4>
-            <p>Led a team of 70 members during KIA Carens NPD production trials.</p>
+            <h4 data-i18n="about.h.team">Team Leadership</h4>
+            <p data-i18n="about.hd.team">Led a team of 70 members during KIA Carens NPD production trials.</p>
           </div>
           <div class="highlight-card">
             <span class="highlight-icon">🌍</span>
-            <h4>Global Outreach</h4>
-            <p>Reached 200+ companies across Europe &amp; Australia for drone technology business development.</p>
+            <h4 data-i18n="about.h.global">Global Outreach</h4>
+            <p data-i18n="about.hd.global">Reached 200+ companies across Europe &amp; Australia for drone technology business development.</p>
           </div>
         </div>
       </div>
@@ -1217,13 +1244,13 @@
 <!-- SKILLS -->
 <section id="skills" class="section">
   <div class="container">
-    <p class="section-label reveal">Skills</p>
-    <h2 class="section-title reveal">Technical &amp; professional expertise</h2>
+    <p data-i18n="skills.label" class="section-label reveal">Skills</p>
+    <h2 data-i18n="skills.title" class="section-title reveal">Technical &amp; professional expertise</h2>
     <div class="skills-grid">
       <div class="skill-category reveal reveal-delay-1">
         <div class="skill-cat-header">
           <div class="skill-cat-icon">🔧</div>
-          <h3>Automation &amp; Robotics</h3>
+          <h3 data-i18n="skills.cat.automation">Automation &amp; Robotics</h3>
         </div>
         <div class="skill-tags">
           <span class="skill-tag">Robotics Engineering</span>
@@ -1237,7 +1264,7 @@
       <div class="skill-category reveal reveal-delay-2">
         <div class="skill-cat-header">
           <div class="skill-cat-icon">📐</div>
-          <h3>Engineering &amp; Design</h3>
+          <h3 data-i18n="skills.cat.engineering">Engineering &amp; Design</h3>
         </div>
         <div class="skill-tags">
           <span class="skill-tag">SolidWorks</span>
@@ -1251,7 +1278,7 @@
       <div class="skill-category reveal reveal-delay-3">
         <div class="skill-cat-header">
           <div class="skill-cat-icon">📊</div>
-          <h3>Process &amp; Operations</h3>
+          <h3 data-i18n="skills.cat.process">Process &amp; Operations</h3>
         </div>
         <div class="skill-tags">
           <span class="skill-tag">LEAN Management</span>
@@ -1265,7 +1292,7 @@
       <div class="skill-category reveal reveal-delay-4">
         <div class="skill-cat-header">
           <div class="skill-cat-icon">🏭</div>
-          <h3>Manufacturing &amp; Shopfloor</h3>
+          <h3 data-i18n="skills.cat.manufacturing">Manufacturing &amp; Shopfloor</h3>
         </div>
         <div class="skill-tags">
           <span class="skill-tag">Shopfloor Management</span>
@@ -1280,7 +1307,7 @@
       <div class="skill-category reveal reveal-delay-4">
         <div class="skill-cat-header">
           <div class="skill-cat-icon">💼</div>
-          <h3>Project &amp; Business</h3>
+          <h3 data-i18n="skills.cat.project">Project &amp; Business</h3>
         </div>
         <div class="skill-tags">
           <span class="skill-tag">Project Management</span>
@@ -1294,7 +1321,7 @@
       <div class="skill-category reveal reveal-delay-1">
         <div class="skill-cat-header">
           <div class="skill-cat-icon">💻</div>
-          <h3>Software &amp; Tools</h3>
+          <h3 data-i18n="skills.cat.software">Software &amp; Tools</h3>
         </div>
         <div class="skill-tags">
           <span class="skill-tag">SAP ERP</span>
@@ -1308,7 +1335,7 @@
       <div class="skill-category reveal reveal-delay-2">
         <div class="skill-cat-header">
           <div class="skill-cat-icon">🤝</div>
-          <h3>Soft Skills</h3>
+          <h3 data-i18n="skills.cat.soft">Soft Skills</h3>
         </div>
         <div class="skill-tags">
           <span class="skill-tag">Team Leadership</span>
@@ -1326,23 +1353,23 @@
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
   <div class="container">
-    <p class="section-label reveal">Experience</p>
-    <h2 class="section-title reveal">Professional journey</h2>
+    <p data-i18n="exp.label" class="section-label reveal">Experience</p>
+    <h2 data-i18n="exp.title" class="section-title reveal">Professional journey</h2>
     <div class="timeline">
 
       <div class="timeline-item reveal">
         <div class="timeline-dot"></div>
         <div class="exp-card">
           <div class="exp-header">
-            <span class="exp-role">Technical Business Development Intern <span style="font-size:12px;font-weight:400;color:var(--text-muted)">(Part-time during M.Sc.)</span></span>
-            <span class="exp-duration">Jan 2025 – Present</span>
+            <span data-i18n="exp.r.dph" class="exp-role">Technical Business Development Intern <span style="font-size:12px;font-weight:400;color:var(--text-muted)">(Part-time during M.Sc.)</span></span>
+            <span data-i18n="exp.d.dph" class="exp-duration">Jan 2025 – Present</span>
           </div>
           <div class="exp-company">Drones Per Hour GmbH</div>
-          <div class="exp-location">📍 Berlin, Germany</div>
+          <div data-i18n="exp.loc.berlin" class="exp-location">📍 Berlin, Germany</div>
           <ul class="exp-achievements">
-            <li>Conducted market research to identify new autonomous drone applications, proposing solar site monitoring and wind turbine inspection as viable business opportunities.</li>
-            <li>Reached out to 200+ companies across Europe and Australia, driving global customer acquisition pipelines.</li>
-            <li>Independently designed and launched dedicated web pages for new service verticals, improving market visibility.</li>
+            <li data-i18n="exp.dph.1">Conducted market research to identify new autonomous drone applications, proposing solar site monitoring and wind turbine inspection as viable business opportunities.</li>
+            <li data-i18n="exp.dph.2">Reached out to 200+ companies across Europe and Australia, driving global customer acquisition pipelines.</li>
+            <li data-i18n="exp.dph.3">Independently designed and launched dedicated web pages for new service verticals, improving market visibility.</li>
           </ul>
         </div>
       </div>
@@ -1351,15 +1378,15 @@
         <div class="timeline-dot"></div>
         <div class="exp-card">
           <div class="exp-header">
-            <span class="exp-role">Research &amp; Development Engineer</span>
+            <span data-i18n="exp.r.waycool" class="exp-role">Research &amp; Development Engineer</span>
             <span class="exp-duration">Mar 2022 – Jun 2024</span>
           </div>
           <div class="exp-company">WayCool Foods &amp; Products Pvt. Ltd.</div>
-          <div class="exp-location">📍 Bengaluru, India</div>
+          <div data-i18n="exp.loc.bengaluru" class="exp-location">📍 Bengaluru, India</div>
           <ul class="exp-achievements">
-            <li>Optimized production and logistics processes through fully automated warehouse systems, achieving 30% efficiency improvement in quality, cost, and delivery time.</li>
-            <li>Developed work plans, process documentation, and training materials for multiple sites using LEAN, KVP, and 5S methodologies.</li>
-            <li>Conducted time studies and workflow analyses, managing equipment from procurement through commissioning. Won Innovator of the Year 2023.</li>
+            <li data-i18n="exp.wc.1">Optimized production and logistics processes through fully automated warehouse systems, achieving 30% efficiency improvement in quality, cost, and delivery time.</li>
+            <li data-i18n="exp.wc.2">Developed work plans, process documentation, and training materials for multiple sites using LEAN, KVP, and 5S methodologies.</li>
+            <li data-i18n="exp.wc.3">Conducted time studies and workflow analyses, managing equipment from procurement through commissioning. Won Innovator of the Year 2023.</li>
           </ul>
         </div>
       </div>
@@ -1368,15 +1395,15 @@
         <div class="timeline-dot"></div>
         <div class="exp-card">
           <div class="exp-header">
-            <span class="exp-role">Trainee Engineer – New Product Development (NPD)</span>
+            <span data-i18n="exp.r.kia" class="exp-role">Trainee Engineer – New Product Development (NPD)</span>
             <span class="exp-duration">Sep 2021 – Feb 2022</span>
           </div>
           <div class="exp-company">KIA Motors India Pvt. Ltd.</div>
-          <div class="exp-location">📍 Penukonda, Andhra Pradesh, India</div>
+          <div data-i18n="exp.loc.penukonda" class="exp-location">📍 Penukonda, Andhra Pradesh, India</div>
           <ul class="exp-achievements">
-            <li>Led a team of 70 members during NPD phases for the KIA Carens launch (December 2021), ensuring efficient production trials and critical issue resolution.</li>
-            <li>Developed work plans, BOMs, and routings for manufacturing processes, monitoring OEE, cycle times, and throughput KPIs.</li>
-            <li>Identified bottlenecks and coordinated interface with design and materials planning departments.</li>
+            <li data-i18n="exp.kia.1">Led a team of 70 members during NPD phases for the KIA Carens launch (December 2021), ensuring efficient production trials and critical issue resolution.</li>
+            <li data-i18n="exp.kia.2">Developed work plans, BOMs, and routings for manufacturing processes, monitoring OEE, cycle times, and throughput KPIs.</li>
+            <li data-i18n="exp.kia.3">Identified bottlenecks and coordinated interface with design and materials planning departments.</li>
           </ul>
         </div>
       </div>
@@ -1385,15 +1412,15 @@
         <div class="timeline-dot"></div>
         <div class="exp-card">
           <div class="exp-header">
-            <span class="exp-role">Process Engineer Intern</span>
+            <span data-i18n="exp.r.bosch" class="exp-role">Process Engineer Intern</span>
             <span class="exp-duration">Mar 2021 – May 2021</span>
           </div>
           <div class="exp-company">Robert Bosch GmbH</div>
-          <div class="exp-location">📍 Kumbalgodu, Karnataka, India</div>
+          <div data-i18n="exp.loc.kumbalgodu" class="exp-location">📍 Kumbalgodu, Karnataka, India</div>
           <ul class="exp-achievements">
-            <li>Oversaw production and quality control for diesel fuel pumps, a product where Bosch holds market monopoly.</li>
-            <li>Designed and implemented a multi-level magnetic sieve system, resolving a recurring child-part dropping issue and saving INR 3,00,000 annually.</li>
-            <li>Applied LEAN methodologies for continuous process improvement across the fuel pump manufacturing line.</li>
+            <li data-i18n="exp.bosch.1">Oversaw production and quality control for diesel fuel pumps, a product where Bosch holds market monopoly.</li>
+            <li data-i18n="exp.bosch.2">Designed and implemented a multi-level magnetic sieve system, resolving a recurring child-part dropping issue and saving INR 3,00,000 annually.</li>
+            <li data-i18n="exp.bosch.3">Applied LEAN methodologies for continuous process improvement across the fuel pump manufacturing line.</li>
           </ul>
         </div>
       </div>
@@ -1405,14 +1432,14 @@
 <!-- PROJECTS -->
 <section id="projects" class="section">
   <div class="container">
-    <p class="section-label reveal">Projects</p>
-    <h2 class="section-title reveal">Engineering innovations</h2>
+    <p data-i18n="proj.label" class="section-label reveal">Projects</p>
+    <h2 data-i18n="proj.title" class="section-title reveal">Engineering innovations</h2>
     <div class="projects-grid">
 
       <div class="project-card reveal reveal-delay-1">
         <div class="project-icon">🚁</div>
-        <h3>AI-Assisted Semi-Automated Fruit Harvesting System</h3>
-        <p>Designed and built a 4 kg payload drone integrated with YOLO v7 deep learning, Jetson Nano, and a precision cutter mechanism for intelligent fruit condition evaluation and harvesting. Conducted extensive field tests for real-world agricultural validation.</p>
+        <h3 data-i18n="proj.t.drone">AI-Assisted Semi-Automated Fruit Harvesting System</h3>
+        <p data-i18n="proj.d.drone">Designed and built a 4 kg payload drone integrated with YOLO v7 deep learning, Jetson Nano, and a precision cutter mechanism for intelligent fruit condition evaluation and harvesting. Conducted extensive field tests for real-world agricultural validation.</p>
         <div class="project-tags">
           <span class="project-tag">YOLO v7</span>
           <span class="project-tag">Jetson Nano</span>
@@ -1424,8 +1451,8 @@
 
       <div class="project-card reveal reveal-delay-2">
         <div class="project-icon">🏭</div>
-        <h3>Automated Fi-Fo Loading &amp; Unloading System</h3>
-        <p>Developed a fully automated warehouse system for managing inbound/outbound operations, streamlining crate handling, weight checking, and SKU-based allocation. Led concept, design optimization, layout planning, and commissioning across multiple warehouse locations.</p>
+        <h3 data-i18n="proj.t.fifo">Automated Fi-Fo Loading &amp; Unloading System</h3>
+        <p data-i18n="proj.d.fifo">Developed a fully automated warehouse system for managing inbound/outbound operations, streamlining crate handling, weight checking, and SKU-based allocation. Led concept, design optimization, layout planning, and commissioning across multiple warehouse locations.</p>
         <div class="project-tags">
           <span class="project-tag">Automation</span>
           <span class="project-tag">Warehouse</span>
@@ -1436,8 +1463,8 @@
 
       <div class="project-card reveal reveal-delay-3">
         <div class="project-icon">🧅</div>
-        <h3>Onion Rot Detection &amp; Prevention System</h3>
-        <p>Developed an automated system to identify and mitigate onion spoilage in cold storage, significantly reducing storage losses and improving quality control in agricultural supply chains.</p>
+        <h3 data-i18n="proj.t.onion">Onion Rot Detection &amp; Prevention System</h3>
+        <p data-i18n="proj.d.onion">Developed an automated system to identify and mitigate onion spoilage in cold storage, significantly reducing storage losses and improving quality control in agricultural supply chains.</p>
         <div class="project-tags">
           <span class="project-tag">Computer Vision</span>
           <span class="project-tag">Quality Control</span>
@@ -1447,8 +1474,8 @@
 
       <div class="project-card reveal reveal-delay-1">
         <div class="project-icon">🥦</div>
-        <h3>Vegetable Size Grader</h3>
-        <p>Engineered a precision grading mechanism for tomatoes, potatoes, and onions to optimize packaging and distribution processes, improving throughput and reducing manual sorting labor.</p>
+        <h3 data-i18n="proj.t.veg">Vegetable Size Grader</h3>
+        <p data-i18n="proj.d.veg">Engineered a precision grading mechanism for tomatoes, potatoes, and onions to optimize packaging and distribution processes, improving throughput and reducing manual sorting labor.</p>
         <div class="project-tags">
           <span class="project-tag">Mechanical Design</span>
           <span class="project-tag">Process Optimization</span>
@@ -1458,8 +1485,8 @@
 
       <div class="project-card reveal reveal-delay-2">
         <div class="project-icon">🌾</div>
-        <h3>Tabletop Sieve for Staples</h3>
-        <p>Designed a compact sieving system to sort grains and pulses by size, improving sorting precision and operational efficiency in warehouse and distribution environments.</p>
+        <h3 data-i18n="proj.t.sieve">Tabletop Sieve for Staples</h3>
+        <p data-i18n="proj.d.sieve">Designed a compact sieving system to sort grains and pulses by size, improving sorting precision and operational efficiency in warehouse and distribution environments.</p>
         <div class="project-tags">
           <span class="project-tag">Mechanical Design</span>
           <span class="project-tag">3D Printing</span>
@@ -1469,8 +1496,8 @@
 
       <div class="project-card reveal reveal-delay-3">
         <div class="project-icon">🚗</div>
-        <h3>KIA Carens NPD Production Trials</h3>
-        <p>Played a pivotal role in production trials and rework for the KIA Carens launched in December 2021. Led a 70-member team through NPD phases, addressing critical process issues and ensuring launch readiness.</p>
+        <h3 data-i18n="proj.t.kia">KIA Carens NPD Production Trials</h3>
+        <p data-i18n="proj.d.kia">Played a pivotal role in production trials and rework for the KIA Carens launched in December 2021. Led a 70-member team through NPD phases, addressing critical process issues and ensuring launch readiness.</p>
         <div class="project-tags">
           <span class="project-tag">NPD</span>
           <span class="project-tag">Automotive</span>
@@ -1486,22 +1513,22 @@
 <!-- EDUCATION -->
 <section id="education" class="section">
   <div class="container">
-    <p class="section-label reveal">Education</p>
-    <h2 class="section-title reveal">Academic background</h2>
+    <p data-i18n="edu.label" class="section-label reveal">Education</p>
+    <h2 data-i18n="edu.title" class="section-title reveal">Academic background</h2>
     <div class="edu-grid">
       <div class="edu-card reveal reveal-delay-1">
-        <div class="edu-degree-label">Master's Degree</div>
+        <div data-i18n="edu.masterlabel" class="edu-degree-label">Master's Degree</div>
         <div class="edu-degree">M.Sc. Engineering Management</div>
         <div class="edu-school">Berlin School of Business and Innovation (BSBI)</div>
-        <div class="edu-meta">📍 Berlin, Germany &nbsp;&middot;&nbsp; May 2024 – Mar 2026</div>
-        <div class="edu-detail">Coursework: Industrial Management, Operations Research, Supply Chain Management, Engineering Economics.</div>
+        <div data-i18n="edu.meta.master" class="edu-meta">📍 Berlin, Germany &nbsp;&middot;&nbsp; May 2024 – Mar 2026</div>
+        <div data-i18n="edu.detail.master" class="edu-detail">Coursework: Industrial Management, Operations Research, Supply Chain Management, Engineering Economics.</div>
       </div>
       <div class="edu-card reveal reveal-delay-2">
-        <div class="edu-degree-label">Bachelor's Degree</div>
-        <div class="edu-degree">B.E. Mechanical Engineering</div>
+        <div data-i18n="edu.bachlabel" class="edu-degree-label">Bachelor's Degree</div>
+        <div data-i18n="edu.deg.bach" class="edu-degree">B.E. Mechanical Engineering</div>
         <div class="edu-school">Global Academy of Technology</div>
-        <div class="edu-meta">📍 Bengaluru, India &nbsp;&middot;&nbsp; Aug 2017 – Aug 2021</div>
-        <div class="edu-detail">Active participant in SAE India competitions: BAJA, SUPRA, Effi-Cycle, Go-Kart. Final project: Mono-axil self-balancing agriculture vehicle for reduced turn radius.</div>
+        <div data-i18n="edu.meta.bach" class="edu-meta">📍 Bengaluru, India &nbsp;&middot;&nbsp; Aug 2017 – Aug 2021</div>
+        <div data-i18n="edu.detail.bach" class="edu-detail">Active participant in SAE India competitions: BAJA, SUPRA, Effi-Cycle, Go-Kart. Final project: Mono-axil self-balancing agriculture vehicle for reduced turn radius.</div>
       </div>
     </div>
   </div>
@@ -1510,37 +1537,37 @@
 <!-- LANGUAGES -->
 <section id="languages" class="section" style="background:var(--bg-soft)">
   <div class="container">
-    <p class="section-label reveal">Languages</p>
-    <h2 class="section-title reveal">Multilingual communicator</h2>
+    <p data-i18n="lang.label" class="section-label reveal">Languages</p>
+    <h2 data-i18n="lang.title" class="section-title reveal">Multilingual communicator</h2>
     <div class="lang-grid reveal reveal-delay-1">
       <div class="lang-card">
-        <div class="lang-name">English</div>
-        <div class="lang-level">C1 — Proficient</div>
+        <div data-i18n="lang.n.english" class="lang-name">English</div>
+        <div class="lang-level" data-i18n="lang.lvl.c1">C1 — Proficient</div>
         <div class="lang-bar"><div class="lang-fill" style="width:85%"></div></div>
       </div>
       <div class="lang-card">
-        <div class="lang-name">German</div>
-        <div class="lang-level">A2 → B1 (Course in progress)</div>
+        <div data-i18n="lang.n.german" class="lang-name">German</div>
+        <div data-i18n="lang.lvl.de" class="lang-level">A2 → B1 (Kurs läuft)</div>
         <div class="lang-bar"><div class="lang-fill" style="width:28%"></div></div>
       </div>
       <div class="lang-card">
-        <div class="lang-name">Kannada</div>
-        <div class="lang-level">C2 — Native</div>
+        <div data-i18n="lang.n.kannada" class="lang-name">Kannada</div>
+        <div data-i18n="lang.lvl.native" class="lang-level">C2 — Native</div>
         <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
       </div>
       <div class="lang-card">
-        <div class="lang-name">Telugu</div>
-        <div class="lang-level">C1 — Proficient</div>
+        <div data-i18n="lang.n.telugu" class="lang-name">Telugu</div>
+        <div class="lang-level" data-i18n="lang.lvl.c1">C1 — Proficient</div>
         <div class="lang-bar"><div class="lang-fill" style="width:85%"></div></div>
       </div>
       <div class="lang-card">
-        <div class="lang-name">Hindi</div>
-        <div class="lang-level">C1 — Proficient</div>
+        <div data-i18n="lang.n.hindi" class="lang-name">Hindi</div>
+        <div class="lang-level" data-i18n="lang.lvl.c1">C1 — Proficient</div>
         <div class="lang-bar"><div class="lang-fill" style="width:85%"></div></div>
       </div>
       <div class="lang-card">
-        <div class="lang-name">Tamil</div>
-        <div class="lang-level">B1 — Intermediate</div>
+        <div data-i18n="lang.n.tamil" class="lang-name">Tamil</div>
+        <div data-i18n="lang.lvl.b1" class="lang-level">B1 — Intermediate</div>
         <div class="lang-bar"><div class="lang-fill" style="width:55%"></div></div>
       </div>
     </div>
@@ -1566,33 +1593,33 @@
 
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
         <span style="font-size:1.4rem;">📩</span>
-        <h2 style="font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--text-primary);line-height:1.2;">For Recruiters &amp; Hiring Managers</h2>
+        <h2 data-i18n="rec.title" style="font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--text-primary);line-height:1.2;">For Recruiters &amp; Hiring Managers</h2>
       </div>
 
-      <p style="font-size:15px;color:var(--text-secondary);margin-bottom:28px;line-height:1.7;">
+      <p data-i18n="rec.intro" style="font-size:15px;color:var(--text-secondary);margin-bottom:28px;line-height:1.7;">
         Currently seeking <strong style="color:var(--text-primary)">Manufacturing Engineer, Process Engineer, and LEAN/CI Specialist</strong> positions in Berlin and Germany.
       </p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;">
         <div style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;">
           <span style="color:#22c55e;font-size:1rem;margin-top:1px;">✅</span>
-          <span style="font-size:13.5px;color:var(--text-secondary);line-height:1.5;"><strong style="color:var(--text-primary);">EU Blue Card eligible</strong> — immediate work authorization</span>
+          <span data-i18n="rec.1" style="font-size:13.5px;color:var(--text-secondary);line-height:1.5;"><strong style="color:var(--text-primary);">EU Blue Card eligible</strong> — immediate work authorization</span>
         </div>
         <div style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;">
           <span style="color:#22c55e;font-size:1rem;margin-top:1px;">✅</span>
-          <span style="font-size:13.5px;color:var(--text-secondary);line-height:1.5;"><strong style="color:var(--text-primary);">Berlin-based</strong> — no relocation needed for Berlin roles</span>
+          <span data-i18n="rec.2" style="font-size:13.5px;color:var(--text-secondary);line-height:1.5;"><strong style="color:var(--text-primary);">Berlin-based</strong> — no relocation needed for Berlin roles</span>
         </div>
         <div style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;">
           <span style="color:#22c55e;font-size:1rem;margin-top:1px;">✅</span>
-          <span style="font-size:13.5px;color:var(--text-secondary);line-height:1.5;"><strong style="color:var(--text-primary);">Proven results:</strong> 30% efficiency improvement, 70-person team leadership</span>
+          <span data-i18n="rec.3" style="font-size:13.5px;color:var(--text-secondary);line-height:1.5;"><strong style="color:var(--text-primary);">Proven results:</strong> 30% efficiency improvement, 70-person team leadership</span>
         </div>
         <div style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;">
           <span style="color:#22c55e;font-size:1rem;margin-top:1px;">✅</span>
-          <span style="font-size:13.5px;color:var(--text-secondary);line-height:1.5;"><strong style="color:var(--text-primary);">German:</strong> A2 (B1 in progress, target June 2026)</span>
+          <span data-i18n="rec.4" style="font-size:13.5px;color:var(--text-secondary);line-height:1.5;"><strong style="color:var(--text-primary);">German:</strong> A2 (B1 in progress)</span>
         </div>
         <div style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;grid-column:1/-1;">
           <span style="color:#22c55e;font-size:1rem;margin-top:1px;">✅</span>
-          <span style="font-size:13.5px;color:var(--text-secondary);line-height:1.5;"><strong style="color:var(--text-primary);">Available immediately</strong> for interviews and project start</span>
+          <span data-i18n="rec.5" style="font-size:13.5px;color:var(--text-secondary);line-height:1.5;"><strong style="color:var(--text-primary);">Available immediately</strong> for interviews and project start</span>
         </div>
       </div>
 
@@ -1614,16 +1641,16 @@
 <section id="contact" class="section">
   <div class="container">
     <div class="contact-card reveal">
-      <p class="section-label" style="text-align:center">Contact</p>
-      <h2 class="contact-title">Let's connect</h2>
-      <p class="contact-sub">I'm actively exploring Technical Project Manager and Automation Engineer roles in Germany and Europe. Open to relocation across the EU.</p>
+      <p data-i18n="contact.label" class="section-label" style="text-align:center">Contact</p>
+      <h2 data-i18n="contact.title" class="contact-title">Let's connect</h2>
+      <p class="contact-sub" data-i18n="contact.sub">I'm actively exploring Manufacturing Engineer, Process Engineer, and LEAN/CI Specialist roles in Berlin and Germany. Available immediately.</p>
       <div class="contact-links">
         <a href="mailto:shivdhanush.de@gmail.com" class="contact-link-item">
           <div class="contact-link-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div>
-            <div class="contact-link-label">Email</div>
+            <div data-i18n="contact.l.email" class="contact-link-label">Email</div>
             <div class="contact-link-value">shivdhanush.de@gmail.com</div>
           </div>
         </a>
@@ -1632,7 +1659,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </div>
           <div>
-            <div class="contact-link-label">LinkedIn</div>
+            <div data-i18n="contact.l.linkedin" class="contact-link-label">LinkedIn</div>
             <div class="contact-link-value">linkedin.com/in/shivdhanush-m-reddy</div>
           </div>
         </a>
@@ -1641,8 +1668,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div>
-            <div class="contact-link-label">Location</div>
-            <div class="contact-link-value">Berlin, Germany &mdash; Immediately available for Berlin/Brandenburg. Open to relocation across Germany &amp; EU for exceptional roles.</div>
+            <div data-i18n="contact.l.location" class="contact-link-label">Location</div>
+            <div data-i18n="contact.v.location" class="contact-link-value">Berlin, Germany &mdash; Immediately available for Berlin/Brandenburg. Open to relocation across Germany &amp; EU for exceptional roles.</div>
           </div>
         </div>
         <div class="contact-link-item">
@@ -1650,13 +1677,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91A16 16 0 0 0 15 17l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
           <div>
-            <div class="contact-link-label">Phone</div>
+            <div data-i18n="contact.l.phone" class="contact-link-label">Phone</div>
             <div class="contact-link-value">+49 176 66683932</div>
           </div>
         </div>
       </div>
       <a href="mailto:shivdhanush.de@gmail.com" class="btn-primary" style="display:inline-flex; margin:0 auto;">
-        Send me a message
+        <span data-i18n="contact.sendbtn">Send me a message</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
@@ -1667,9 +1694,9 @@
 <footer>
   <div class="container">
     <p class="footer-text">
-      &copy; 2025 Shivdhanush Mamidur &nbsp;&middot;&nbsp; Automation Project Engineer &nbsp;&middot;&nbsp; Berlin, Germany
+      <span data-i18n="footer.line1">&copy; 2025 Shivdhanush Mamidur &nbsp;&middot;&nbsp; Process &amp; Manufacturing Engineer &nbsp;&middot;&nbsp; Berlin, Germany</span>
       <br/>
-      <span style="font-size:11px;color:var(--text-muted);display:block;margin-top:6px;">EU Blue Card Eligible &nbsp;&middot;&nbsp; Open to relocation across Germany &amp; Europe</span>
+      <span data-i18n="footer.line2" style="font-size:11px;color:var(--text-muted);display:block;margin-top:6px;">EU Blue Card Eligible &nbsp;&middot;&nbsp; Open to relocation across Germany &amp; Europe</span>
     </p>
   </div>
 </footer>
@@ -1750,7 +1777,160 @@
   }, { threshold: 0.5 });
   langFills.forEach(el => langObserver.observe(el));
 
-  // Smooth scroll for nav links
+  // ============================
+  //  LANGUAGE TOGGLE (EN / DE)
+  // ============================
+  const translations = {
+    de: {
+      // nav
+      "nav.about": "Über mich", "nav.skills": "Kompetenzen", "nav.experience": "Berufserfahrung",
+      "nav.projects": "Projekte", "nav.education": "Ausbildung", "nav.recruiters": "Recruiter",
+      "nav.contact": "Kontakt", "nav.cta": "Kontakt aufnehmen",
+      // hero
+      "hero.eyebrow": "Verfügbar für neue Herausforderungen",
+      "hero.title": "Prozess- &amp; Fertigungsingenieur | LEAN-Spezialist | Automatisierung &amp; NPD",
+      "hero.bio": "Prozess- &amp; Fertigungsingenieur mit 4+ Jahren Erfahrung in Shopfloor-Betrieb, Produktionsoptimierung und LEAN-getriebener Automatisierung in der Automobil-, Agrartechnik- und Lebensmittelindustrie. In Berlin ansässig, sofort verfügbar, EU Blue Card berechtigt.",
+      "hero.badge.shopfloor": "Shopfloor-Management",
+      "hero.badge.npd": "NPD / NPI-Hochlauf",
+      "hero.badge.bluecard": "EU Blue Card berechtigt",
+      "stat.years": "Jahre Erfahrung", "stat.projects": "Schlüsselprojekte",
+      "stat.languages": "Sprachen", "stat.team": "Teamgröße",
+      // about
+      "about.label": "Über mich",
+      "about.title": "Technische Präzision trifft strategisches Denken",
+      "about.p1": "Ich bin Prozess- &amp; Fertigungsingenieur mit über 4 Jahren praktischer Erfahrung in Shopfloor-Betrieb, Produktionsoptimierung und LEAN-getriebener Automatisierung in der Automobil-, Agrartechnik- und Lebensmittelindustrie. Meine Arbeit reicht von NPD-Produktionshochläufen bis zu Lagerautomatisierungssystemen und liefert konsequent messbare Effizienzsteigerungen.",
+      "about.p2": "Mit nachgewiesener Expertise in Shopfloor-Management, Arbeitsplanung und Ursachenanalyse (5Why, 8D) habe ich durch LEAN/KVP-Methoden 30 % Effizienzsteigerungen erzielt und erfolgreich Produktionsteams mit über 70 Mitarbeitern während kritischer Automobil-Markteinführungen geleitet.",
+      "about.p3": "Derzeit schließe ich meinen M.Sc. in Engineering Management an der Berlin School of Business and Innovation ab und verbinde technische Ingenieurtiefe mit ausgeprägtem Geschäftssinn in Projektabwicklung und bereichsübergreifender Führung.",
+      "about.p4": "Ich suche aktiv nach Stellen als Fertigungsingenieur, Prozessingenieur und LEAN-/KVP-Spezialist in Deutschland, mit Expertise in Shopfloor-Betrieb, Prozessoptimierung und Automatisierungsintegration.",
+      "about.award1": "\uD83C\uDFC6 Innovator des Jahres 2023 \u2014 WayCool Foods",
+      "about.award2": "\uD83C\uDF96 Auszeichnung für Führungsstärke \u2014 KIA Motors 2022",
+      "about.h.robotics": "Robotik &amp; KI",
+      "about.hd.robotics": "KI-integrierte Drohnen mit YOLO v7 und Jetson Nano für Präzisionsanwendungen in der Agrartechnik entwickelt.",
+      "about.h.process": "Prozesstechnik",
+      "about.hd.process": "30 % Effizienzsteigerung durch LEAN-, KVP- und 5S-getriebene Automatisierungsprojekte erzielt.",
+      "about.h.team": "Teamführung",
+      "about.hd.team": "Team von 70 Mitarbeitern während der KIA-Carens-NPD-Produktionsversuche geleitet.",
+      "about.h.global": "Globale Akquise",
+      "about.hd.global": "Über 200 Unternehmen in Europa &amp; Australien für die Geschäftsentwicklung im Bereich Drohnentechnik kontaktiert.",
+      // skills
+      "skills.label": "Kompetenzen",
+      "skills.title": "Technische &amp; fachliche Expertise",
+      "skills.cat.automation": "Automatisierung &amp; Robotik",
+      "skills.cat.engineering": "Konstruktion &amp; Design",
+      "skills.cat.process": "Prozesse &amp; Betrieb",
+      "skills.cat.manufacturing": "Fertigung &amp; Shopfloor",
+      "skills.cat.project": "Projekt &amp; Business",
+      "skills.cat.software": "Software &amp; Tools",
+      "skills.cat.soft": "Soft Skills",
+      // experience
+      "exp.label": "Berufserfahrung",
+      "exp.title": "Beruflicher Werdegang",
+      "exp.r.dph": "Technischer Business Development Praktikant <span style=\"font-size:12px;font-weight:400;color:var(--text-muted)\">(Teilzeit während M.Sc.)</span>",
+      "exp.d.dph": "Jan. 2025 \u2013 Heute",
+      "exp.loc.berlin": "\uD83D\uDCCD Berlin, Deutschland",
+      "exp.dph.1": "Marktforschung zur Identifizierung neuer Anwendungen für autonome Drohnen durchgeführt und Solarpark-Monitoring sowie Windturbineninspektion als tragfähige Geschäftsmöglichkeiten vorgeschlagen.",
+      "exp.dph.2": "Über 200 Unternehmen in Europa und Australien kontaktiert und globale Kundenakquise-Pipelines aufgebaut.",
+      "exp.dph.3": "Eigenständig dedizierte Webseiten für neue Servicebereiche gestaltet und veröffentlicht und so die Marktsichtbarkeit verbessert.",
+      "exp.r.waycool": "Forschungs- &amp; Entwicklungsingenieur",
+      "exp.loc.bengaluru": "\uD83D\uDCCD Bengaluru, Indien",
+      "exp.wc.1": "Produktions- und Logistikprozesse durch vollautomatisierte Lagersysteme optimiert und 30 % Effizienzsteigerung bei Qualität, Kosten und Lieferzeit erreicht.",
+      "exp.wc.2": "Arbeitspläne, Prozessdokumentationen und Schulungsunterlagen für mehrere Standorte unter Anwendung von LEAN-, KVP- und 5S-Methoden entwickelt.",
+      "exp.wc.3": "Zeitstudien und Arbeitsablaufanalysen durchgeführt und Anlagen von der Beschaffung bis zur Inbetriebnahme betreut. Auszeichnung als Innovator des Jahres 2023.",
+      "exp.r.kia": "Trainee-Ingenieur \u2013 Neuproduktentwicklung (NPD)",
+      "exp.loc.penukonda": "\uD83D\uDCCD Penukonda, Andhra Pradesh, Indien",
+      "exp.kia.1": "Team von 70 Mitarbeitern während der NPD-Phasen für die KIA-Carens-Markteinführung (Dezember 2021) geleitet und effiziente Produktionsversuche sowie die Lösung kritischer Probleme sichergestellt.",
+      "exp.kia.2": "Arbeitspläne, Stücklisten und Routings für Fertigungsprozesse entwickelt und OEE, Zykluszeiten sowie Durchsatz-KPIs überwacht.",
+      "exp.kia.3": "Engpässe identifiziert und Schnittstellen zu Konstruktion und Materialplanung koordiniert.",
+      "exp.r.bosch": "Praktikant Prozessingenieur",
+      "exp.loc.kumbalgodu": "\uD83D\uDCCD Kumbalgodu, Karnataka, Indien",
+      "exp.bosch.1": "Produktion und Qualitätskontrolle für Diesel-Kraftstoffpumpen verantwortet, ein Produkt mit Marktmonopol von Bosch.",
+      "exp.bosch.2": "Mehrstufiges magnetisches Siebsystem konzipiert und implementiert, ein wiederkehrendes Problem herabfallender Bauteile gelöst und jährlich 300.000 INR eingespart.",
+      "exp.bosch.3": "LEAN-Methoden zur kontinuierlichen Prozessverbesserung in der Kraftstoffpumpen-Fertigungslinie angewendet.",
+      // projects
+      "proj.label": "Projekte",
+      "proj.title": "Technische Innovationen",
+      "proj.t.drone": "KI-gestütztes halbautomatisches Obsterntesystem",
+      "proj.d.drone": "4-kg-Nutzlastdrohne mit YOLO-v7-Deep-Learning, Jetson Nano und Präzisions-Schneidmechanismus zur intelligenten Bewertung des Fruchtzustands und Ernte konzipiert und gebaut. Umfangreiche Feldtests zur Validierung unter realen landwirtschaftlichen Bedingungen durchgeführt.",
+      "proj.t.fifo": "Automatisiertes Fi-Fo Be- und Entladesystem",
+      "proj.d.fifo": "Vollautomatisiertes Lagersystem für ein- und ausgehende Abläufe entwickelt, das Kistenhandling, Gewichtsprüfung und SKU-basierte Zuteilung optimiert. Konzept, Designoptimierung, Layout-Planung und Inbetriebnahme an mehreren Lagerstandorten geleitet.",
+      "proj.t.onion": "System zur Erkennung und Vermeidung von Zwiebelfäule",
+      "proj.d.onion": "Automatisiertes System zur Erkennung und Eindämmung von Zwiebelverderb im Kühllager entwickelt, das Lagerverluste deutlich reduziert und die Qualitätskontrolle in landwirtschaftlichen Lieferketten verbessert.",
+      "proj.t.veg": "Gemüse-Größensortierer",
+      "proj.d.veg": "Präzisions-Sortiermechanismus für Tomaten, Kartoffeln und Zwiebeln zur Optimierung von Verpackung und Distribution konstruiert, der den Durchsatz erhöht und manuelle Sortierarbeit reduziert.",
+      "proj.t.sieve": "Tisch-Siebsystem für Grundnahrungsmittel",
+      "proj.d.sieve": "Kompaktes Siebsystem zur Sortierung von Getreide und Hülsenfrüchten nach Größe konzipiert, das die Sortiergenauigkeit und betriebliche Effizienz in Lager- und Distributionsumgebungen verbessert.",
+      "proj.t.kia": "KIA Carens NPD-Produktionsversuche",
+      "proj.d.kia": "Zentrale Rolle bei Produktionsversuchen und Nacharbeit für den im Dezember 2021 eingeführten KIA Carens gespielt. Ein 70-köpfiges Team durch die NPD-Phasen geführt, kritische Prozessprobleme gelöst und die Markteinführungsbereitschaft sichergestellt.",
+      // education
+      "edu.label": "Ausbildung",
+      "edu.title": "Akademischer Werdegang",
+      "edu.masterlabel": "Masterabschluss",
+      "edu.meta.master": "\uD83D\uDCCD Berlin, Deutschland &nbsp;&middot;&nbsp; Mai 2024 \u2013 März 2026",
+      "edu.detail.master": "Schwerpunkte: Industrial Management, Operations Research, Supply Chain Management, Engineering Economics.",
+      "edu.bachlabel": "Bachelorabschluss",
+      "edu.deg.bach": "B.E. Maschinenbau",
+      "edu.meta.bach": "\uD83D\uDCCD Bengaluru, Indien &nbsp;&middot;&nbsp; Aug. 2017 \u2013 Aug. 2021",
+      "edu.detail.bach": "Aktive Teilnahme an SAE-India-Wettbewerben: BAJA, SUPRA, Effi-Cycle, Go-Kart. Abschlussprojekt: Einachsiges selbstbalancierendes Landwirtschaftsfahrzeug zur Reduzierung des Wenderadius.",
+      // languages
+      "lang.label": "Sprachen",
+      "lang.title": "Mehrsprachiger Kommunikator",
+      "lang.n.english": "Englisch", "lang.n.german": "Deutsch", "lang.n.kannada": "Kannada",
+      "lang.n.telugu": "Telugu", "lang.n.hindi": "Hindi", "lang.n.tamil": "Tamilisch",
+      "lang.lvl.c1": "C1 \u2014 Verhandlungssicher",
+      "lang.lvl.de": "A2 \u2192 B1 (Kurs läuft)",
+      "lang.lvl.native": "C2 \u2014 Muttersprache",
+      "lang.lvl.b1": "B1 \u2014 Fortgeschritten",
+      // recruiters
+      "rec.title": "Für Recruiter &amp; Personalverantwortliche",
+      "rec.intro": "Aktuell auf der Suche nach Stellen als <strong style=\"color:var(--text-primary)\">Fertigungsingenieur, Prozessingenieur und LEAN-/KVP-Spezialist</strong> in Berlin und Deutschland.",
+      "rec.1": "<strong style=\"color:var(--text-primary);\">EU Blue Card berechtigt</strong> \u2014 sofortige Arbeitserlaubnis",
+      "rec.2": "<strong style=\"color:var(--text-primary);\">In Berlin ansässig</strong> \u2014 kein Umzug für Berliner Stellen nötig",
+      "rec.3": "<strong style=\"color:var(--text-primary);\">Nachgewiesene Erfolge:</strong> 30 % Effizienzsteigerung, Führung eines 70-köpfigen Teams",
+      "rec.4": "<strong style=\"color:var(--text-primary);\">Deutsch:</strong> A2 (B1 in Arbeit)",
+      "rec.5": "<strong style=\"color:var(--text-primary);\">Sofort verfügbar</strong> für Interviews und Projektstart",
+      // contact
+      "contact.label": "Kontakt",
+      "contact.title": "Lassen Sie uns vernetzen",
+      "contact.sub": "Ich suche aktiv nach Stellen als Fertigungsingenieur, Prozessingenieur und LEAN-/KVP-Spezialist in Berlin und Deutschland. Sofort verfügbar.",
+      "contact.l.email": "E-Mail", "contact.l.linkedin": "LinkedIn",
+      "contact.l.location": "Standort", "contact.l.phone": "Telefon",
+      "contact.v.location": "Berlin, Deutschland &mdash; Sofort verfügbar für Berlin/Brandenburg. Umzug innerhalb Deutschlands &amp; der EU für herausragende Stellen möglich.",
+      "contact.sendbtn": "Nachricht senden",
+      // footer
+      "footer.line1": "&copy; 2025 Shivdhanush Mamidur &nbsp;&middot;&nbsp; Prozess- &amp; Fertigungsingenieur &nbsp;&middot;&nbsp; Berlin, Deutschland",
+      "footer.line2": "EU Blue Card berechtigt &nbsp;&middot;&nbsp; Umzug innerhalb Deutschlands &amp; Europas möglich"
+    }
+  };
+
+  // capture English baseline (innerHTML) for every translatable element
+  const i18nEls = document.querySelectorAll('[data-i18n]');
+  const enBaseline = {};
+  i18nEls.forEach(el => { enBaseline[el.getAttribute('data-i18n')] = el.innerHTML; });
+
+  function setLang(lang) {
+    i18nEls.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (lang === 'de' && translations.de[key] !== undefined) {
+        el.innerHTML = translations.de[key];
+      } else {
+        el.innerHTML = enBaseline[key];
+      }
+    });
+    document.documentElement.setAttribute('lang', lang);
+    localStorage.setItem('lang', lang);
+    const cur = document.getElementById('lang-current');
+    const oth = document.getElementById('lang-other');
+    if (lang === 'de') { cur.textContent = 'DE'; oth.textContent = 'EN'; }
+    else { cur.textContent = 'EN'; oth.textContent = 'DE'; }
+  }
+
+  const savedLang = localStorage.getItem('lang') || 'en';
+  setLang(savedLang);
+
+  document.getElementById('lang-toggle').addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('lang');
+    setLang(current === 'de' ? 'en' : 'de');
+  });
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
